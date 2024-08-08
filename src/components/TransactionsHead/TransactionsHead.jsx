@@ -5,9 +5,9 @@ import css from "./TransactionsHead.module.css";
 export default function TransactionsHead() {
   return (
     <>
-      <th>Type</th>
-      <th>Amount</th>
-      <th>Currency</th>
+      <th className={clsx(css.tableHead)}>Type</th>
+      <th className={clsx(css.tableHead)}>Amount</th>
+      <th className={clsx(css.tableHead)}>Currency</th>
     </>
   );
 }
