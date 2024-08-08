@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-// import css from "./Profile.module.css";
+import clsx from "clsx";
+import css from "./Profile.module.css";
 
 export default function Profile({
   name,
@@ -9,32 +10,41 @@ export default function Profile({
   stats: { followers, views, likes },
 }) {
   return (
-    <div>
-      <div>
-        <img src={image} alt={name} />
-        <p>
-          <b>{name}</b>
-        </p>
-        <p>@{tag}</p>
-        <p>{location}</p>
+    <div className={clsx(css.container)}>
+      <div className={clsx(css.userContent)}>
+        <div className={clsx(css.imgWrapper)}>
+          <img
+            src={image}
+            alt={name}
+            width="280"
+            className={clsx(css.userImg)}
+          />
+        </div>
+        <div className={clsx(css.userInfo)}>
+          <p className={clsx(css.userName)}>
+            <b>{name}</b>
+          </p>
+          <p className={clsx(css.userTag)}>@{tag}</p>
+          <p className={clsx(css.userLocation)}>{location}</p>
+        </div>
       </div>
 
-      <ul>
-        <li>
-          <span>Followers</span>
-          <span>
+      <ul className={clsx(css.userStats)}>
+        <li className={clsx(css.userItem)}>
+          <span className={clsx(css.userStatsTitle)}>Followers</span>
+          <span className={clsx(css.userStatsInfo)}>
             <b>{followers}</b>
           </span>
         </li>
-        <li>
-          <span>Views</span>
-          <span>
+        <li className={clsx(css.userItem)}>
+          <span className={clsx(css.userStatsTitle)}>Views</span>
+          <span className={clsx(css.userStatsInfo)}>
             <b>{views}</b>
           </span>
         </li>
-        <li>
-          <span>Likes</span>
-          <span>
+        <li className={clsx(css.userItem)}>
+          <span className={clsx(css.userStatsTitle)}>Likes</span>
+          <span className={clsx(css.userStatsInfo)}>
             <b>{likes}</b>
           </span>
         </li>

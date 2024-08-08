@@ -1,20 +1,22 @@
 import PropTypes from "prop-types";
+import clsx from "clsx";
 import TransactionItem from "../TransactionItem/TransactionItem";
 import TransactionsHead from "../TransactionsHead/TransactionsHead";
+import css from "./TransactionHistory.module.css";
 
 export default function TransactionHistory({ items }) {
   return (
-    <table>
-      <thead>
+    <table className={clsx(css.transactionsTable)}>
+      <thead className={clsx(css.tableHead)}>
         <tr>
           <TransactionsHead />
         </tr>
       </thead>
 
-      <tbody>
+      <tbody className={clsx(css.tableBody)}>
         {items.map((item) => {
           return (
-            <tr key={item.id}>
+            <tr key={item.id} className={clsx(css.tableBodyRow)}>
               <TransactionItem
                 type={item.type}
                 amount={item.amount}
@@ -32,7 +34,7 @@ TransactionHistory.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       type: PropTypes.string.isRequired,
-      amount: PropTypes.number.isRequired,
+      amount: PropTypes.string.isRequired,
       currency: PropTypes.string.isRequired,
       id: PropTypes.string.isRequired,
     })

@@ -1,13 +1,15 @@
 import PropTypes from "prop-types";
-// import css from "./FriendList.module.css";
+import clsx from "clsx";
+import css from "./FriendList.module.css";
+
 import FriendListItem from "../FriendListItem/FriendListItem";
 
 export default function FriendList({ friends }) {
   return (
-    <ul>
+    <ul className={clsx(css.friendsWraper)}>
       {friends.map((friend) => {
         return (
-          <li key={friend.id}>
+          <li key={friend.id} className={clsx(css.friendsItem)}>
             <FriendListItem
               avatar={friend.avatar}
               name={friend.name}

@@ -1,5 +1,6 @@
-// import PropTypes from "prop-types";
-// import css from "./TransactionsHead.module.css";
+import PropTypes from "prop-types";
+import clsx from "clsx";
+import css from "./TransactionsHead.module.css";
 
 export default function TransactionsHead() {
   return (
